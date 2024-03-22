@@ -372,6 +372,20 @@ fun main() {
 
     // PAGE 91
     val firstBook = MyBooks("Crime and Punishment ", "Fyodor Dostoevsky", 1866)
+    val secondBook = MyBooks("Crime and Punishment ", "Fyodor Dostoevsky", 1866)
+    println("equals(): ${firstBook.equals(secondBook)}")
+
+    println("hashCode() - firstBook: ${firstBook.hashCode()}")
+    println("hashCode() - secondBook: ${secondBook.hashCode()}")
+
+    println("toString(): - firstBook: $firstBook")
+    println("toString(): - secondBook: $secondBook")
+
+    val copyBook = firstBook.copy(publishedDate = 1867)
+    println("copy() - Copied Book: $copyBook")
+
+    // PAGE 92
+
 
 
 }
@@ -555,4 +569,27 @@ class Cats(feetCount: Int, earCount: Int, name: String): Animals(feetCount, earC
 fun findMinValue(first: Int, second: Int): Int = if (first > second) second else first
 
 data class MyBooks(val name: String, val author: String, val publishedDate: Int)
+
+// PAGE 92
+data class MyStudents(val name: String, val number: Int, val classroom: Int ) {
+
+    // ..............................................
+    // In Kotlin, the data class produces an operator
+    // function called componentN. For this reason,
+    // it does not allow manual operation and gives an
+    // overload error.
+    // ................................................
+
+
+
+    /*operator fun component1(): String {
+        return name
+    }
+    operator fun component2(): Int {
+        return number
+    }
+    operator fun component3(): Int {
+        return classroom
+    }*/
+}
 
